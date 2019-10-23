@@ -1,0 +1,4 @@
+enum {
+	IDLE,
+	EXIT,
+} state;
