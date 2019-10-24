@@ -5,10 +5,10 @@
 #include <strings.h>
 #include <conio.h>
 #include <math.h>
-#include "usuario.c"
-#include "state.c"
-#include "admin.c"
-#include "home.c"
+#include "usuario.h"
+#include "state.h"
+#include "admin.h"
+#include "home.h"
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 void requestMatricula(char *matricula) {
@@ -30,11 +30,13 @@ int main(int argc, char *argv[]) {
 	printf("##  ####  ########################################  ####  ##\n\n");
 	do {
 		char matricula[6];
-		char senha[256];
-		requestMatricula(&matricula);
-		requestSenha(&senha);
-		if(strcasecmp(&matricula, "123456") == 0 && strcasecmp(&senha,"123456") == 0) {
-			adminScreen();
+		char senha[255];
+		requestMatricula(matricula);
+		requestSenha(senha);
+		if(strcasecmp(matricula, "123456") == 0 && strcasecmp(senha,"123456") == 0) {
+			while(state != EXIT) {
+				adminScreen();
+			};
 		}
 		
 	}while(state != EXIT);
