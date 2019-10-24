@@ -1,15 +1,15 @@
-# Project: Project1
+# Project: Pizzamania
 # Makefile created by Dev-C++ 5.11
 
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o usuario.o state.o
-LINKOBJ  = main.o usuario.o state.o
+OBJ      = main.o state.o usuario.o home.o admin.o
+LINKOBJ  = main.o state.o usuario.o home.o admin.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
-BIN      = Pim.exe
+BIN      = Pizzamania.exe
 CXXFLAGS = $(CXXINCS) 
 CFLAGS   = $(INCS) 
 RM       = rm.exe -f
@@ -27,8 +27,14 @@ $(BIN): $(OBJ)
 main.o: main.c
 	$(CC) -c main.c -o main.o $(CFLAGS)
 
+state.o: state.c
+	$(CC) -c state.c -o state.o $(CFLAGS)
+
 usuario.o: usuario.c
 	$(CC) -c usuario.c -o usuario.o $(CFLAGS)
 
-state.o: state.c
-	$(CC) -c state.c -o state.o $(CFLAGS)
+home.o: home.c
+	$(CC) -c home.c -o home.o $(CFLAGS)
+
+admin.o: admin.c
+	$(CC) -c admin.c -o admin.o $(CFLAGS)

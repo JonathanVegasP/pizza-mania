@@ -7,6 +7,8 @@
 #include <math.h>
 #include "usuario.c"
 #include "state.c"
+#include "admin.c"
+#include "home.c"
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 void requestMatricula(char *matricula) {
@@ -31,6 +33,10 @@ int main(int argc, char *argv[]) {
 		char senha[256];
 		requestMatricula(&matricula);
 		requestSenha(&senha);
+		if(strcasecmp(&matricula, "123456") == 0 && strcasecmp(&senha,"123456") == 0) {
+			adminScreen();
+		}
+		
 	}while(state != EXIT);
 	return 0;
 }
