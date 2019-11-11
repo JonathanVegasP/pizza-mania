@@ -16,7 +16,7 @@ void registrarAdm() {
 	gets(telefone);
 	printf("Insira o cpf do administrador\n");
 	gets(cpf);
-	Usuario user = newUsuario(name,cpf,telefone,matricula,1);
+	Usuario user = newUsuario(name,cpf,telefone, 1);
 	registrarAdmin(user);
 }
 
